@@ -6,16 +6,31 @@
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.7.2",
+    "concurrently": "^6.0.0",
+    "cross-env": "^7.0.3",
+    "electron": "^11.3.0",
+    "electron-builder": "^22.9.1",
+    "electron-is-dev": "^1.2.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.2",
+    "typescript": "^4.1.5",
+    "wait-on": "^5.2.1",
     "web-vitals": "^1.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    
+    "react-start": "react-scripts start",
+    "react-build": "react-scripts build",
+    "react-test": "react-scripts test --env=jsdom",
+    "react-eject": "react-scripts eject",
+    "electron-build": "electron-builder",
+    "build": "yarn react-build && yarn electron-build",
+    "start": "concurrently \"cross-env BROWSER=none yarn react-start\" \"wait-on http://localhost:3000 && electron .\""
   },
   "eslintConfig": {
     "extends": [
@@ -34,5 +49,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+    },
+  "description": "A react-electron boilerplate.",
+  "author": "Honestymx",
+  "build": {
+      "appId": "<com.react-electron-boilerplate>"
+  },
+  "main": "public/electron.js",
+  "homepage": "./"
 }

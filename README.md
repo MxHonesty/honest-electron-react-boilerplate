@@ -1,3 +1,8 @@
+# A React-Electron Boilerplate for future projects.
+
+This is a minimal boilerplate that will build into an electron app.
+##### `Still Under Development `
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
